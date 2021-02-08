@@ -13,7 +13,7 @@ RUN apk add --no-cache git curl jq \
     && adduser -u 1000 -G alpine -h /home/alpine -s /bin/sh -D alpine
 
 RUN curl -SsL -o /usr/local/bin/kubectl \
-    "https://storage.googleapis.com/kubernetes-release/release/v${VERSION}/bin/${TARGETOS}/${TARGETARCH}/kubectl" \
+    "https://storage.googleapis.com/kubernetes-release/release/${VERSION}/bin/${TARGETOS}/${TARGETARCH}/kubectl" \
     && chmod +x /usr/local/bin/kubectl
 
 USER alpine:alpine
